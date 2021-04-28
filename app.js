@@ -14,8 +14,7 @@ app.use(router)
 connectDB();
 app.use(express.static('client/build'));
 app.get('/', (req, res) => {
-    res.set('Content-Type', 'text/html');
-    res.sendFile('/app/public/build/index.html');
+    res.sendFile('/app/public/build/index.html')
 })
 
 const metricsmodel = mongoose.model('datafiles', schema);
