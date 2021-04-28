@@ -1,0 +1,9 @@
+.navstyles{
+    width: 100%;
+    background-color: #fff;
+}
+.navbarstyles{
+    padding: 0px 0px 0px 0px;
+    box-shadow: 0 8px 6px -6px rgba(9, 7, 7, 0.42);
+    border-radius: 5px;
+}

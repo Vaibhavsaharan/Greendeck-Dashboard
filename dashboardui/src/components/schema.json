@@ -1,0 +1,15 @@
+[
+    {
+      "name": "Time",
+      "type": "date",
+      "format": "%d-%b-%y %H:%M:%S"
+    },
+    {
+      "name": "Type",
+      "type": "string"
+    },
+    {
+      "name": "Sales Value",
+      "type": "number"
+    }
+]
