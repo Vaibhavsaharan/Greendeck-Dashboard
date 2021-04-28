@@ -2,14 +2,16 @@ const express = require('express');
 const mongoose = require('mongoose');
 const connectDB = require('./config/db');
 const cors = require('cors');
+const routes = require('./routes');
 const schemaModule = require('./schema.js');
 const schema = schemaModule.metricsschema;
 const dataschema = schemaModule.dataschema;
 
 const app = express();
 app.use(cors())
+app.use(routes)
 connectDB();
-
+app.use(express.static('client/build'));
 app.get('/', (req, res) => res.send('Hello world!'));
 
 const metricsmodel = mongoose.model('datafiles', schema);
@@ -34,6 +36,10 @@ app.get('/:id' , (req, res) => {
             res.send(result);
         }
     });
+});
+
+router.use(function(req, res) {
+	res.sendFile(path.join(__dirname, '../dashboardui/build/index.html'));
 });
 
 const port = process.env.PORT || 8082;
