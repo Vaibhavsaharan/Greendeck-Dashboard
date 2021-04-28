@@ -12,7 +12,7 @@ const app = express();
 app.use(cors())
 app.use(router)
 connectDB();
-app.use(express.static('client/build'));
+app.use(express.static('dashboardui/build'));
 
 
 const metricsmodel = mongoose.model('datafiles', schema);
