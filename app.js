@@ -2,14 +2,14 @@ const express = require('express');
 const mongoose = require('mongoose');
 const connectDB = require('./config/db');
 const cors = require('cors');
-const routes = require('express').Router();
+const router = require('express').Router();
 const schemaModule = require('./schema.js');
 const schema = schemaModule.metricsschema;
 const dataschema = schemaModule.dataschema;
 
 const app = express();
 app.use(cors())
-app.use(routes)
+app.use(router)
 connectDB();
 app.use(express.static('client/build'));
 app.get('/', (req, res) => res.send('Hello world!'));
