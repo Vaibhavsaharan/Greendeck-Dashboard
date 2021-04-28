@@ -13,7 +13,7 @@ app.use(cors())
 app.use(router)
 connectDB();
 app.use(express.static('client/build'));
-app.get('/', (req, res) => res.send('Hello world!'));
+app.get('/', (req, res) => res.sendFile('/dashboardui/build/index.html'));
 
 const metricsmodel = mongoose.model('datafiles', schema);
 
@@ -39,10 +39,10 @@ app.get('/:id' , (req, res) => {
     });
 });
 
-router.use(function(req, res) {
-    console.log('/dashboardui/build/index.html')
-	res.sendFile('/dashboardui/build/index.html');
-});
+// router.use(function(req, res) {
+//     console.log('/dashboardui/build/index.html')
+// 	res.sendFile('/dashboardui/build/index.html');
+// });
 
 const port = process.env.PORT || 8082;
 
