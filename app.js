@@ -14,7 +14,7 @@ app.use(router)
 connectDB();
 app.use(express.static('client/build'));
 app.get('/', (req, res) => {
-    res.set('Content-Type', 'text/javascript');
+    res.set('Content-Type', 'text/html');
     res.sendFile('/app/dashboardui/build/index.html');
 })
 
