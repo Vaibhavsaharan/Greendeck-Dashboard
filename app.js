@@ -40,7 +40,8 @@ app.get('/:id' , (req, res) => {
 });
 
 router.use(function(req, res) {
-	res.sendFile(path.join(__dirname, '../dashboardui/build/index.html'));
+    console.log(__dirname + '/dashboardui/build/index.html')
+	res.sendFile(path.join(__dirname, '/dashboardui/build/index.html'));
 });
 
 const port = process.env.PORT || 8082;
