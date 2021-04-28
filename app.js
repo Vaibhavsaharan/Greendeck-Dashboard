@@ -13,7 +13,7 @@ app.use(cors())
 app.use(router)
 connectDB();
 app.use(express.static('client/build'));
-app.get('/', (req, res) => res.sendFile('../dashboardui/build/index.html'));
+app.get('/', (req, res) => res.sendFile(path.join(__dirname,'../dashboardui/build/index.html')));
 
 const metricsmodel = mongoose.model('datafiles', schema);
 
