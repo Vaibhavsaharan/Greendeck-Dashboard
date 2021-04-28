@@ -1,0 +1,4 @@
+{
+    "mongoURI":
+      "mongodb+srv://admin:admin@greendeck.z50ns.mongodb.net/Greendeckdb?retryWrites=true&w=majority"
+  }
