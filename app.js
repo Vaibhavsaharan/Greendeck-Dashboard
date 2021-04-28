@@ -14,7 +14,7 @@ app.use(router)
 connectDB();
 app.use(express.static('client/build'));
 app.get('/', (req, res) => res.sendFile(path.join(__dirname,'../dashboardui/build/index.html')));
-console.log(__dirname))
+console.log(__dirname)
 const metricsmodel = mongoose.model('datafiles', schema);
 
 app.get('/metrics' , (req, res) => {
