@@ -27,6 +27,7 @@ app.get("*", (req, res) => {
 });
 
 app.get('/metrics' , (req, res) => {
+    console.log("request came bitches")
     metricsmodel.find({}, function(err, result) {
         if (err) {
             res.send(err);
