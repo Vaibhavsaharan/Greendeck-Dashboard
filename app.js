@@ -2,7 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const connectDB = require('./config/db');
 const cors = require('cors');
-const router = require('express').Router();
 const schemaModule = require('./schema.js');
 const path = require('path');
 const schema = schemaModule.metricsschema;
@@ -10,9 +9,9 @@ const dataschema = schemaModule.dataschema;
 
 const app = express();
 app.use(cors())
-app.use(router)
-connectDB();
 app.use(express.static(path.join(__dirname,'dashboardui/build')));
+connectDB();
+
 
 
 const metricsmodel = mongoose.model('datafiles', schema);
