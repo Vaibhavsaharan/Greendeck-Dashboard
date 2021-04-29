@@ -1,14 +1,20 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const connectDB = require('./config/db');
-const cors = require('cors');
+// const cors = require('cors');
 const schemaModule = require('./schema.js');
 const path = require('path');
 const schema = schemaModule.metricsschema;
 const dataschema = schemaModule.dataschema;
+var corsMiddleware = function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', 'localhost'); //replace localhost with actual host
+    res.header('Access-Control-Allow-Methods', 'OPTIONS, GET, PUT, PATCH, POST, DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, X-Requested-With, Authorization');
 
+    next();
+}
 const app = express();
-app.use(cors())
+app.use(corsMiddleware)
 app.use(express.static(path.join(__dirname,'dashboardui/build')));
 connectDB();
 
