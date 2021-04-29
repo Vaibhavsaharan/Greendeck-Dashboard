@@ -15,8 +15,7 @@ class MetricsWidget extends Component{
     }
 
     componentDidMount(){
-        console.log('something new')
-        fetch("https://localhost:8082/metrics")
+        fetch("http://localhost:8082/metrics")
             .then(res => res.json())
             .then(data => {
                 this.setState({

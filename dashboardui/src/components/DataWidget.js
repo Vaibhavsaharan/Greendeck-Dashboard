@@ -56,7 +56,7 @@ class DataWidget extends Component{
     }
     ondatafetch(){
         const dataFetch = fetch(
-            "https://localhost:8082/"+this.props.fileid
+            "http://localhost:8082/"+this.props.fileid
           ).then(res => res.json());
         Promise.all([dataFetch, schemaFetch]).then(res => {
             const data = res[0];
