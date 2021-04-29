@@ -12,8 +12,6 @@ app.use(cors())
 app.use(express.static(path.join(__dirname,'dashboardui/build')));
 connectDB();
 
-
-
 const metricsmodel = mongoose.model('datafiles', schema);
 
 app.get("*", (req, res) => {
@@ -44,6 +42,6 @@ app.get('/:id' , (req, res) => {
 });
 
 
-const port = process.env.PORT || 8082;
+const port = 8082;
 
 app.listen(port, () => console.log(`[Done] : Server running on port ${port}`));
