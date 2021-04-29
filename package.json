@@ -8,7 +8,7 @@
     "server": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "heroku-postbuild": "cd dashboradui && npm install --only=dev && npm install && npm run build"
+    "heroku-postbuild": "cd dashboardui && npm install --only=dev && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
