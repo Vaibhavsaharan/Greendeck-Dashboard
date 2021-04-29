@@ -12,10 +12,14 @@ const app = express();
 app.use(cors())
 app.use(router)
 connectDB();
-app.use(express.static('/app/public/build'));
+app.use(express.static(path.join(__dirname,'dashboardui/build')));
 
 
 const metricsmodel = mongoose.model('datafiles', schema);
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "dashboardui", "build", "index.html"));
+});
 
 app.get('/metrics' , (req, res) => {
     metricsmodel.find({}, function(err, result) {
@@ -39,9 +43,6 @@ app.get('/:id' , (req, res) => {
     });
 });
 
-router.use(function(req, res) {
-	res.sendFile('/app/public/build/index.html');
-});
 
 const port = process.env.PORT || 8082;
 
