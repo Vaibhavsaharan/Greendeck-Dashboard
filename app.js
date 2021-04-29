@@ -26,7 +26,7 @@ app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "dashboardui", "build", "index.html"));
 });
 
-app.get('/metric' , (req, res) => {
+app.get('/metrics' , (req, res) => {
     metricsmodel.find({}, function(err, result) {
         if (err) {
             res.send(err);
